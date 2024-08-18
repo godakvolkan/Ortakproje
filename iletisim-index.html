@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İLETİŞİM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Navbar'ı saydam yapmak için */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.8); /* Beyaz rengin %80 şeffaflığı */
+            backdrop-filter: blur(10px); /* Arka planı bulanıklaştırır */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif bir gölge efekti */
+        }
+
+        /* Arka plan fotoğrafını büyütme ve bulanıklaştırma */
+        .background {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Tam ekran yüksekliği */
+            overflow: hidden;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Fotoğrafı kapsayıcıya sığdırır */
+            filter: blur(5px); /* Fotoğrafı bulanıklaştırır */
+        }
+
+        .background-overlay {
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5); /* Fotoğraf üstüne yarı saydam bir beyaz katman */
+            z-index: 2; /* Overlay'in formun altında görünmesini sağlar */
+        }
+
+        /* Formun arka plan görselleri üzerinde merkezi olarak konumlanması */
+        .form-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Yarı saydam beyaz arka plan */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 3; /* Formun en üstte görünmesi için yüksek z-index */
+            width: 90%;
+            max-width: 600px; /* Formun maksimum genişliği */
+            box-sizing: border-box; /* Padding ve border'ı toplam genişliğe dahil eder */
+            text-align: center; /* İçeriğin ortalanmasını sağlar */
+        }
+
+        .form-container h3 {
+            margin-bottom: 20px; /* Başlık ile form arasında boşluk bırakır */
+        }
+
+        /* Mobil uyumlu ayarlar */
+        @media (max-width: 768px) {
+            .carousel-inner img {
+                height: 100vh; /* Fotoğrafın küçük ekranlarda ekran yüksekliğine uyacak şekilde büyütülmesi */
+                object-fit: cover; /* Fotoğrafı kapsayıcıya uygun şekilde sığdırır */
+                filter: blur(5px); /* Fotoğrafı bulanıklaştırır */
+            }
+            
+            .form-container {
+                width: 90%;
+                max-width: 100%; /* Formun küçük ekranlarda tam genişlikte görünmesini sağlar */
+                top: 50%; /* Formun üstten uzaklığı, navbar ve diğer bileşenler için yer bırakır */
+            }
+        }
+    </style>
+</head>
+
+<body onload="myFunction()">
+    <!-- JavaScript Dosyaları -->
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            myFunction();
+        });
+
+        function myFunction()
+        {
+            
+        }
+    </script>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">İCON-LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">ANA SAYFA <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hakkimizda-index.html">HAKKIMIZDA</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="iletisim-index.html">İLETİŞİM</a>
+                </li>
+                <li class="nav-item-blog" style="text-align: end;">
+                    <a class="nav-link disabled">BLOG</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sayfa İçeriği -->
+    <div class="background">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="style/yedi_guzel_adam_muzesi.jpg" alt="Arka Plan 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="style/ali_kayasi_cam_teras_1.jpg" alt="Arka Plan 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="style/maras_genel.jpg" alt="Arka Plan 3">
+                </div>
+            </div>
+            <!-- Carousel kontrol butonları -->
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Önceki</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Sonraki</span>
+            </a>
+        </div>
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Form Konteyneri -->
+    <div class="form-container">
+        <h3>İletişim Formu</h3>
+        <table class="form-table">
+            <tr>
+                <td>İsim Soyisim</td>
+                <td><input type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Telefon</td>
+                <td><input type="tel" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Mesajınız</td>
+                <td><textarea cols="50" rows="10" class="form-control"></textarea></td>
+            </tr>
+            <tr class="submit-button">
+                <td colspan="2"><input type="submit" class="btn btn-primary"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
